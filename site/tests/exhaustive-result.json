@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "uniquePositions": 300598,
+  "humanPositions": 118453,
+  "cpuPositions": 182145,
+  "humanBranches": 655155,
+  "cpuBranches": 273000,
+  "humanLosingBranches": 305100,
+  "cpuLosingBranches": 0,
+  "miniBoardsChecked": 182310,
+  "tiedCpuPositions": 73965,
+  "memoHits": 322458,
+  "seconds": 0.323,
+  "scope": "All 15 human openings; all human moves; all Rule 3 ties; all inclusion-minimal mini-boards; exact labelled-position memoization; terminal losses counted as branches."
+}

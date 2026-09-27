@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ラムゼーゲーム | Sim</title>
+<meta name="description" content="自分の色の三角形を作ったら負け！6つの頂点を結ぶ、コンピューターとの思考ゲーム。">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23192032'/%3E%3Cpath d='M16 6 27 25H5Z' fill='none' stroke='%237fa6ff' stroke-width='3'/%3E%3Ccircle cx='16' cy='6' r='3' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="./style.css">
+<script type="module" src="./app.js"></script>
+</head>
+<body>
+<main>
+<header><a class="brand" href="./" aria-label="ラムゼーゲーム ホーム"><span class="brand-mark">△</span> SIM <span class="brand-divider"></span> A GAME OF CONNECTIONS</a><span class="edition">K₆ · 6 VERTICES / 15 EDGES</span></header>
+<section class="heading"><div><p class="eyebrow">つなぐほど、むずかしくなる。</p><h1>ラムゼーゲーム</h1><p class="subtitle">自分の色の三角形を作ったら負け！</p></div><div class="order" role="group" aria-label="あなたの手番順"><span>あなたは</span><div class="segmented"><button id="first" aria-pressed="true">先手</button><button id="second" aria-pressed="false">後手</button></div></div></section>
+<section class="game-card" aria-label="Simの対戦盤面">
+<div class="board-top"><div class="player human"><span class="color-line"></span><div>あなた <small id="human-order">先手</small></div><span class="score" id="human-score">0</span></div><span class="versus">VS</span><div class="player cpu"><span class="color-line"></span><div>コンピューター <small id="cpu-order">後手</small></div><span class="score" id="cpu-score">0</span></div></div>
+<div class="status-wrap"><p id="status" role="status" aria-live="polite">あなたの番</p><p id="hint">グレーの辺を1本選んでください</p></div>
+<div class="board-area"><svg id="board" viewBox="0 0 600 540" aria-label="6頂点の完全グラフ。未使用の辺を選んでください。" role="group"></svg></div>
+<div class="board-bottom"><span id="move-count">00 <span>/ 15 本</span></span><span id="last-move">まだ線は引かれていません</span></div>
+</section>
+<div class="actions"><button id="reset" class="primary"><span aria-hidden="true">↻</span> もう一度</button><button id="swap" class="secondary"><span aria-hidden="true">⇄</span> 先手／後手を入れ替える</button></div>
+<details class="guide"><summary>遊び方とCPUについて <span aria-hidden="true">＋</span></summary><div class="guide-content"><p>交互にグレーの辺を1本ずつ自分の色にします。自分の色だけで三角形を作ったら負け。交差する線は頂点ではありません。</p><p>線が選びにくいときは、両端の頂点を順にタップできます。キーボードでは Tab で辺や頂点を選び、Enter または Space で決定できます。</p><p id="mode-note"></p><p>CPUは <a href="https://arxiv.org/abs/2001.04024" target="_blank" rel="noopener noreferrer">Wrzos-Kaminska (2020) の戦略</a>に基づき着手します。</p></div></details>
+<footer><span>小さなグラフ、大きな思考。</span><span>RAMSEY GAME / SIM</span></footer>
+</main>
+</body>
+</html>
